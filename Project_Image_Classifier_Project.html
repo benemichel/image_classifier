@@ -14372,7 +14372,7 @@ Batch size: 32
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#workaround according https://github.com/tensorflow/tensorflow/issues/26835</span>
-<span class="n">reloaded_model</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">models</span><span class="o">.</span><span class="n">load_model</span><span class="p">(</span><span class="s2">&quot;./image_net_oxford_flowers_20200511_174947_0.81.h5&quot;</span><span class="p">,</span><span class="n">custom_objects</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;KerasLayer&#39;</span><span class="p">:</span><span class="n">hub</span><span class="o">.</span><span class="n">KerasLayer</span><span class="p">})</span>
+<span class="n">reloaded_model</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">models</span><span class="o">.</span><span class="n">load_model</span><span class="p">(</span><span class="s2">&quot;./image_net_oxford_flowers_20200512_092739_0.81.h5&quot;</span><span class="p">,</span><span class="n">custom_objects</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;KerasLayer&#39;</span><span class="p">:</span><span class="n">hub</span><span class="o">.</span><span class="n">KerasLayer</span><span class="p">})</span>
 <span class="c1">#reloaded_model = tf.keras.models.load_model(saved_models[0])</span>
 </pre></div>
 
