@@ -28,26 +28,20 @@ import helpers as h
 parser = argparse.ArgumentParser()
 parser.add_argument("image_path", help="path to the image file")
 parser.add_argument("saved_model", help="Keras model file")
-parser.add_argument("--top_k", type = int, help="Top_k number of top classes shown")
+parser.add_argument("--top_k", type = int, help="Top_k number of top classes shown", default = 5)
 parser.add_argument("--category_names", help="JSON file with class<->label mapping")
 args = parser.parse_args()
 
 #extract arguments
 image_path = args.image_path
 model_file = args.saved_model
-
-#handle optional arguments
-if args.top_k:
-    top_k = args.top_k
-else:
-    top_k = 5
+top_k = args.top_k
 
 class_names = {}
 if args.category_names:
     category_names = args.category_names
     with open(category_names, 'r') as f:
         class_names = json.load(f)  #dict
-
 
 #load model
 model = tf.keras.models.load_model(model_file, custom_objects={'KerasLayer':hub.KerasLayer})
